@@ -8,7 +8,7 @@
     ]
   },
   "globalHeaders": {
-    "Content-Security-Policy": "frame-ancestors https://commentary.dev http://localhost:3000 http://localhost:3001",
+    "Content-Security-Policy": "frame-ancestors https://commentary.dev https://staging.commentary.dev http://localhost:3000 http://localhost:3001",
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin-when-cross-origin"
   }
