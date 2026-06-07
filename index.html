@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Azure Static Web Apps Web App Review Fixture</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script>
+      (function configureCommentaryReviewParent() {
+        var allowedParentOrigins = new Set(["https://commentary.dev", "http://localhost:3000", "http://localhost:3001"]);
+        var referrerOrigin = document.referrer ? new URL(document.referrer).origin : "";
+        window.__COMMENTARY_PARENT_ORIGIN__ = allowedParentOrigins.has(referrerOrigin) ? referrerOrigin : "https://commentary.dev";
+      })();
+      window.__COMMENTARY_COMMIT_SHA__ = "azure-swa-fixture-commit";
+      window.__COMMENTARY_BUILD_ID__ = "azure-swa-fixture-build";
+    </script>
+    <script src="/commentary-review-sdk.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="/" data-route-link>Overview</a>
+      <a href="/settings/billing" data-route-link>Billing</a>
+      <a href="/checkout" data-route-link>Checkout</a>
+    </header>
+
+    <main class="app-shell">
+      <section data-page="home">
+        <p class="eyebrow">Azure Static Web Apps</p>
+        <h1>Azure Static Web Apps Web App Review fixture</h1>
+        <p>This header-configurable preview fixture allows Commentary framing in review environments.</p>
+        <button
+          type="button"
+          class="primary-action"
+          data-counter-button
+          data-commentary-id="HostedAzureSwa.primaryCta"
+          data-commentary-component="HostedAzureSwa"
+          data-commentary-source="src/HostedAzureSwa.tsx:29:7">
+          Primary CTA
+        </button>
+        <p>CTA clicks: <span data-counter-value>0</span></p>
+      </section>
+
+      <section data-page="billing" hidden>
+        <p class="eyebrow">Settings</p>
+        <h1>Billing settings</h1>
+        <label>
+          Company name
+          <input name="company_name" placeholder="Acme Studio">
+        </label>
+        <button
+          type="button"
+          data-commentary-id="HostedAzureSwa.saveButton"
+          data-commentary-component="HostedAzureSwa"
+          data-commentary-source="src/HostedAzureSwa.tsx:52:9">
+          Save changes
+        </button>
+      </section>
+
+      <section data-page="checkout" hidden>
+        <p class="eyebrow">Checkout</p>
+        <h1>Checkout</h1>
+        <button type="button" aria-label="Submit checkout">Submit order</button>
+      </section>
+    </main>
+  </body>
+</html>
