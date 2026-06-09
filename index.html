@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="/styles.css">
     <script>
       (function configureCommentaryReviewParent() {
-        var allowedParentOrigins = new Set(["https://commentary.dev", "https://staging.commentary.dev", "http://localhost:3000", "http://localhost:3001"]);
+        var commentaryParentOrigins = ["https://commentary.dev", "https://staging.commentary.dev", "http://localhost:3000", "http://localhost:3001"];
+        var allowedParentOrigins = new Set(commentaryParentOrigins);
         var referrerOrigin = document.referrer ? new URL(document.referrer).origin : "";
+        window.__COMMENTARY_PARENT_ORIGINS__ = commentaryParentOrigins;
         window.__COMMENTARY_PARENT_ORIGIN__ = allowedParentOrigins.has(referrerOrigin) ? referrerOrigin : "https://commentary.dev";
       })();
       window.__COMMENTARY_COMMIT_SHA__ = "azure-swa-fixture-commit";
       window.__COMMENTARY_BUILD_ID__ = "azure-swa-fixture-build";
     </script>
-    <script src="/commentary-review-sdk.js" defer></script>
+    <script src="https://cdn.commentary.dev/review-sdk/latest/commentary-review-sdk.js" defer></script>
     <script src="/app.js" defer></script>
   </head>
   <body>

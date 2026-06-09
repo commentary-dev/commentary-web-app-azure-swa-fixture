@@ -7,7 +7,7 @@ This static app is the source for `commentary-dev/commentary-web-app-azure-swa-f
 ```json
 {
   "globalHeaders": {
-    "Content-Security-Policy": "frame-ancestors https://commentary.dev http://localhost:3000 http://localhost:3001"
+    "Content-Security-Policy": "frame-ancestors https://commentary.dev https://staging.commentary.dev http://localhost:3000 http://localhost:3001"
   }
 }
 ```
